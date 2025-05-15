@@ -1,0 +1,56 @@
+@startuml DOM
+
+class Window #LightBlue
+note top 
+representa cada pestaña
+<BOM>
+end note
+Window *--> Document
+
+class EventTarget #LightYellow
+class Node 
+note top
+per a moures dintre 
+del arbol DOM 
+end note
+EventTarget <|-- Node
+
+class Document {
+    + location
+}
+note top
+info de la pàgina que 
+s'esta mostrant
+NODO RAIZ DEL ARBOL <DOM>
+end note
+Node <|-- Document
+Document *--> "+" Element
+
+class Element
+note bottom
+UN es el NODE RAIZ 
+DEL DOCUMENT (html, xml, svg...).
+end note
+Node <|-- Element
+note on link
+A més hi han altres nodos:
+text, atribut, comentaris...
+end note
+Element .left.> EtiquetaDelDocument
+
+class EtiquetaDelDocument #LightPink
+
+class HTMLElement 
+Element <|-- HTMLElement
+HTMLElement --> CSSDeclaration : style
+note on link
+si prioritat no cal indicar-la:
+element.style.propiedadCSS = "xxxYYY";
+end note
+
+class CSSDeclaration
+CSSDeclaration .left.> EstilCSSAplicatEnEtiqueta
+
+
+class EstilCSSAplicatEnEtiqueta #LightPink
+@enduml

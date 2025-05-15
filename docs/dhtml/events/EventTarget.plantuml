@@ -1,0 +1,9 @@
+@startuml event target 
+class EventTarget {
+
+    + addEventListener(type, callback(Event) or object with .handleEvent(Event))
+}
+EventTarget ..> Event
+
+class Event
+@enduml

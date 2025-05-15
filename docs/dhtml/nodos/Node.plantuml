@@ -1,0 +1,29 @@
+@startuml node 
+
+class Node {
+    appendChild(Node)
+}
+note top
+incluidas derivadas que 
+NO son elementos ni document
+end note
+EventTarget <|-- Node
+
+class Attr
+Node <|-- Attr
+
+class CharacterData
+note bottom
+hay más derivadas
+end note
+Node <|-- CharacterData
+
+class Text
+CharacterData <|-- Text
+
+class Comment
+CharacterData <|-- Comment
+
+class DocumentType
+Node <|-- DocumentType
+@enduml

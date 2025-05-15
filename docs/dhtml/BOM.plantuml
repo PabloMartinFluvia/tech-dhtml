@@ -1,0 +1,56 @@
+@startuml BOM
+class Global
+note top 
+representa el client
+end note
+Global *--> Navigator
+Global *--> Screen
+Global *--> "+" Window
+
+class Navigator
+note top
+amb el que navega / fa peticions
+representant del user-agent
+end note
+
+class Screen
+note top
+el que gestiona la pantalla
+¿Renderització i gestió CSS?
+end note
+EventTarget <|-- Screen
+
+class Window {
+    + navigator
+    + screen
+}
+note top 
+representa cada pestaña
+end note
+Window *--> Location
+Window *--> History
+Window *--> Document
+
+class Location
+note bottom
+representa la URL
+end note
+
+class History 
+note bottom
+info de la navegació en
+aquesta pestaña
+end note
+
+class EventTarget #LightYellow
+
+class Document #LightBlue{
+    + location
+}
+note bottom
+info de la pàgina que 
+s'esta mostrant
+NODO RAIZ DEL ARBOL <DOM>
+end note
+EventTarget <|-- Document
+@enduml

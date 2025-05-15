@@ -1,0 +1,14 @@
+@startuml document
+
+class Document {
+
+    + getElementById(id) : Element
+    + getElementsByYYY(...)
+    + querySelector(...)
+    + createElement(<tagName>): Element or Derived
+    + createTextNode(string): Text
+}
+Node <|-- Document
+
+class Node
+@enduml

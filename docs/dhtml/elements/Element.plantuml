@@ -1,0 +1,18 @@
+@startuml element
+
+class Element {
+    + innerHTML: html de los nodos descendientes serialized as string
+
+    + setAttribute(attribute: String, value: String);
+    + setAttributeNode(Attr)
+}
+Node <|-- Element
+
+class HTMLElement
+Element <|-- HTMLElement
+
+class HTMLInputElement {
+    + value
+}
+HTMLElement <|-- HTMLInputElement
+@enduml
