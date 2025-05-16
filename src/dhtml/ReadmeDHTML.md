@@ -6,6 +6,7 @@
     * [BOM](#bom)
     * [DOM](#dom)
     * [Nodos d'un document](#nodos-dun-document)
+    * [Events](#events)
 * [Gestió de nodes](#gestió-de-nodes)
     * [Node](#node)
     * [Document](#document)
@@ -14,7 +15,7 @@
 * [Gestió d'events](#gestió-devents)
     * [EventTarget](#event-target)
 * [Gestió d'estils](#gestió-destils)
-    * [CSSDeclaration](#cssdeclaration)
+    * [CSSStyleDeclaration](#cssdeclaration)
 
 ## Jerarquia
 
@@ -27,6 +28,8 @@
 ### Nodos d'un document
 ![Nodos d'un document](../../out/docs/dhtml/nodos.png)
 
+## Events
+![Estructura dels events](../../out/docs/dhtml/EV/events.svg)
 
 ## Gestió de nodes
 
@@ -51,5 +54,5 @@
 
 ## Gestió d'Estils
 
-### CSSDeclaration
-[!CSSDeclaration](../../out/docs/dhtml/estil/CSSDeclaration/cssDec.svg)
+### CSSStyleDeclaration
+[!CSSStyleDeclaration](../../out/docs/dhtml/estil/CSSStyleDeclaration/declarationcss.svg)

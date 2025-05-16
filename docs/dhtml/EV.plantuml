@@ -1,0 +1,62 @@
+@startuml events
+
+abstract Event {
+    + type: String del NOM del event
+}
+Event --> EventTarget : + target
+
+abstract UIEvent
+Event <|-- UIEvent
+
+class MouseEvent
+UIEvent <|-- MouseEvent
+
+class KeyboardEvend
+UIEvent <|-- KeyboardEvend
+
+class ProgressEvent
+Event <|-- ProgressEvent
+
+
+class EventTarget {
+    + addEventListener(eventName: String, callback)
+}
+note bottom
+eventName és com una KEY.
+REGISTRA EL CALLBACK como SUBSCRIPTOR,
+en el manejador del evento
+end note
+
+abstract EventNameHandler {
+    - callbackSubscribers: Function[]
+}
+
+class ClickEventHandler
+ClickEventHandler ..> MouseEvent : new
+EventNameHandler <|-- ClickEventHandler
+
+class MouseLeaveHandler
+MouseLeaveHandler ..> MouseEvent : new
+EventNameHandler <|-- MouseLeaveHandler
+
+class LoadEventHandler
+LoadEventHandler ..> ProgressEvent : new
+EventNameHandler <|-- LoadEventHandler
+
+class X as "..." 
+EventNameHandler <|-- X
+
+
+
+
+class Element #LightBlue
+note bottom 
+Per donar d'alta la gestió d'un event:
+OpcióA: element.addEventListener('eventName', callbackFunction);
+Opció B: element.onEventType = callbackFunction;
+end note
+Node <|--Element
+
+class Node #LightBlue
+EventTarget <|-- Node
+@enduml

@@ -1,0 +1,7 @@
+@startuml declarationcss
+
+class CSSStyleDeclaration {
+    + setProperty(propertyName, value)
+}
+
+@enduml

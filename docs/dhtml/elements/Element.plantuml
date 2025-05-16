@@ -8,11 +8,14 @@ class Element {
 }
 Node <|-- Element
 
-class HTMLElement
+class HTMLElement 
 Element <|-- HTMLElement
+Element --> CSSStyleDeclaration: + style
 
 class HTMLInputElement {
     + value
 }
 HTMLElement <|-- HTMLInputElement
+
+class CSSStyleDeclaration
 @enduml

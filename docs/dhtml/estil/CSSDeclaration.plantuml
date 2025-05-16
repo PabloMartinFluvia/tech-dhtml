@@ -1,7 +1,0 @@
-@startuml cssdec
-
-class CSSDeclaration {
-    + setProperty(propertyName, value)
-}
-
-@enduml
