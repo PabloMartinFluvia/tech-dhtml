@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro dinàmico</title>   
+</head>
+<body>
+    <h1>Passa el ratón por encima y mira la consola</h1>
+
+    <script>
+        const h1Element = document.getElementsByTagName('h1')[0];
+
+        h1Element.addEventListener('mouseenter', event => 
+            {console.log(`que ha pasado?: ${event.type}`);});
+
+        h1Element.addEventListener('mouseleave', onMouseLeave);
+
+        function onMouseLeave(event) {
+            console.log(`que ha pasado?: ${event.type}`);
+        }
+    </script>
+</body>
+</html>

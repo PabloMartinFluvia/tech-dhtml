@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>loadEvent</title>
+    <script>
+        function onLoadBody(event) {
+            console.log("Callback del load event registrado des del <body>.")
+            console.log("Evento con propiedad type: " + event.type);    
+            console.log("El target és todo el documento:" + event.target);  
+            console.log(`event.target === document ??: ${event.target === document}`); 
+            console.log(`event.target: ${event.target}`);   
+            console.log(`event.currentTarget: ${event.currentTarget}`);                                       
+        }
+    </script>
+</head>
+
+<body onLoad = "onLoadBody(event)">     
+    
+
+</body>
+
+</html>

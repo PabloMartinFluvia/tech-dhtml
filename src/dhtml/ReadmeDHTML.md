@@ -12,8 +12,11 @@
     * [Document](#document)
 * [Gestió d'elements](#gestió-delements)
     * [Element](#element)
+    * [HTMLFormElement](#htmlformelement)
+    * [HTMLInputElement](#htmlinputelement)
 * [Gestió d'events](#gestió-devents)
     * [EventTarget](#event-target)
+    * [Event](#event)
 * [Gestió d'estils](#gestió-destils)
     * [CSSStyleDeclaration](#cssdeclaration)
 
@@ -45,11 +48,24 @@
 ### Element
 ![Element](../../out/docs/dhtml/elements/Element/element.svg)
 
+### HTMLFormElement
+[HTMLFormElement readme](../../docs/dhtml/elements/HTMLFormElement.md)
+
+![HTMLFormElement](../../out/docs/dhtml/elements/HTMLFormElement/form.svg)
+
+### HTMLInputElement
+![HTMLInputElement](../../out/docs/dhtml/elements/HTMLInputElement/htmlinputelement.svg)
+
 
 ## Gestió d'Events
 
 ### Event Target
 ![EventTarget](../../out/docs/dhtml/events/EventTarget/event%20target.svg)
+
+### Event
+[Event readme](../../docs/dhtml/events/Event.md)
+
+![Event](../../out/docs/dhtml/events/Event/event.svg)
 
 
 ## Gestió d'Estils

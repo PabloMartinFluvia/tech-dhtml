@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Event. Bubbling</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="onLoad();">
+    <div class="nivel-1">
+        <h1>Nivel 1</h1>
+        <div class="nivel-2">
+            <h2>Nivel 2</h2>
+            <div class="nivel-3">
+                <h3>Nivel 3</h3>
+                <div class="nivel-4">
+                    <h4>Nivel 4</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function onLoad() {
+            for (let div of document.getElementsByTagName("div")) {
+                div.addEventListener("click", alertBubblingFromListener);
+                div.addEventListener("click"
+                    , alertBubblingFromListenerWithoutPropagation);
+            }
+        }
+
+        function alertBubblingFromListener(event) {
+            console.log("Bubbling from: " + getMsg(event, this));
+
+            function getMsg(event, element) {
+                if (event.count == undefined) {
+                    event.count = 0;
+                }
+                event.count++;
+                return element.getAttribute("class") + " con " + event.count;
+            }
+        }
+
+        function alertBubblingFromListenerWithoutPropagation(event) {
+            console.log("Bubbling without Propagation from: "
+                + getMsg(event, this));
+            if (this.getAttribute("class") === "nivel-2") {
+                console.log("STOP burbujeo: cancelando propagación en nivel 2");
+                event.stopPropagation();
+            }
+
+            function getMsg(event, element) {
+                if (event.countManaged == undefined) {
+                    event.countManaged = 0;
+                }
+                event.countManaged++;
+                return element.getAttribute("class") + " con " + event.countManaged;
+            }
+        }         
+    </script>
+</body>
+
+</html>

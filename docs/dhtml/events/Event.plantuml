@@ -1,0 +1,10 @@
+@startuml event
+
+class Event {
+    + type: String del NOM del event
+    + target: EventTarget
+
+    + preventDefault()
+    + stopPropagation()
+}
+@enduml

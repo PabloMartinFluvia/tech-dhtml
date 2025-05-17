@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sumbit event</title>
+
+    <script>
+        function onSubmit(event) {
+            const formElement = event.target;
+            console.log(`Usuario ha disparado el evento ${event.type} en "${formElement.className}"`);                   
+        }
+
+        function validateSubmit(event) {
+            onSubmit(event);
+            const checkboxInputElement = document.getElementsByName("confirmar")[0];  
+            const formElement = event.target;
+            console.log(`El action del "${formElement.className}" se ha llevado a cabo?: ${checkboxInputElement.checked}`)
+            return checkboxInputElement.checked;        
+        }
+    </script>
+</head>
+<body>
+    <form class="formulario sin validar" target ="_blank" method="get" action="https://www.youtube.com"
+        onsubmit="onSubmit(event)">        
+        
+        <input type="submit" value="Finalizar e ir a Youtube"/>
+    </form>
+
+    <form class="formulario con validacion" target ="_blank" method="get" action="https://www.youtube.com"
+        onsubmit="return validateSubmit(event)">        
+        <label for="confirmar">Seleccionar si se quiere ir:</label>
+        <input type="checkbox" name="confirmar"/>
+        <br>
+        <input type="submit" value="Finalizar: ir a Youtube (o no) según lo elegido"/>
+    </form>
+
+    <form class="formulario a fuego" target ="_blank" method="get" action="https://www.youtube.com"
+        onsubmit="return false">        
+        
+        <input type="submit" value="valor de la propiedad onsubmit: return false"/>
+    </form>
+
+    <form class="formulario a fuego" target ="_blank" method="get" action="https://www.youtube.com"
+        onsubmit="true">        
+        
+        <input type="submit" value="valor de la propiedad onsubmit: true"/>
+    </form>
+</body>
+</html>

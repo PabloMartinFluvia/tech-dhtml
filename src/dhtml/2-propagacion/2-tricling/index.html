@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Event. Trickling</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="onLoad();">
+    <div class="nivel-1">
+        <h1>Nivel 1</h1>
+        <div class="nivel-2">
+            <h2>Nivel 2</h2>
+            <div class="nivel-3">
+                <h3>Nivel 3</h3>
+                <div class="nivel-4">
+                    <h4>Nivel 4</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function onLoad() {
+            for (let div of document.getElementsByTagName("div")) {
+                div.addEventListener("click", alertTricklingFromListener, true);
+                div.addEventListener("click"
+                    , alertTricklingFromListenerWithoutPropagation, true);
+            }
+        }
+
+        function alertTricklingFromListener(event) {
+            console.log("Trickling form addEventListener: "
+                + getMsg(event, this));
+
+            function getMsg(event, element) {
+                if (event.count == undefined) {
+                    event.count = 0;
+                }
+                event.count++;
+                return element.getAttribute("class") + " con " + event.count;
+            }
+        }
+
+        function alertTricklingFromListenerWithoutPropagation(event) {
+            console.log("Trickling form addEventListener without Propagation: "
+                + getMsg(event, this));
+            if (this.getAttribute("class") === "nivel-3") {
+                console.log("STOP goteo: cancelando propagación en nivel 3");
+                event.stopPropagation();
+            }
+
+            function getMsg(event, element) {
+                if (event.countManaged == undefined) {
+                    event.countManaged = 0;
+                }
+                event.countManaged++;
+                return element.getAttribute("class") + " con " + event.countManaged;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

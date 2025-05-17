@@ -1,0 +1,9 @@
+@startuml form 
+class HTMLFormElement {
+    + action: String URL (o ruta relativa) on està el servei a solicitar
+    + method: String post o get
+
+    + submit()
+}
+HTMLElement <|-- HTMLFormElement
+@enduml

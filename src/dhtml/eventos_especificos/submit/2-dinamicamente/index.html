@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sumbit event</title>    
+</head>
+<body>
+    <form class="formulario sin validar" target ="_blank" method="get" action="https://www.youtube.com">        
+        <input type="submit" value="Finalizar e ir a Youtube"/>
+    </form>
+
+    <form class="formulario con validacion" target ="_blank" method="get" action="https://www.youtube.com">        
+        <label for="confirmar">Seleccionar si se quiere ir:</label>
+        <input type="checkbox" name="confirmar"/>
+        <br>
+        <input type="submit" value="Finalizar: ir a Youtube (o no) según lo elegido"/>
+    </form>
+
+    <script>
+        // primer form sin validación
+        let form = document.getElementsByClassName("formulario sin validar")[0];
+        form.addEventListener("submit", onSubmit);
+
+        function onSubmit(event) {
+            const formElement = event.target;
+            console.log(`Usuario ha disparado el evento ${event.type} en "${formElement.className}"`);                   
+        }
+
+        // segundo form con validación
+        form = document.getElementsByClassName("formulario con validacion")[0];         
+        form.addEventListener("submit", validateSubmit);      
+        // equivale estaticamente a sumbit = valitadeSubmit(event) 
+        //    -> action se ejecutaría siempre, independientemente del valor retornado  
+
+        function validateSubmit(event) {  
+            event.preventDefault(); // evita que se ejecute el action         
+            onSubmit(event);
+            const checkboxInputElement = document.getElementsByName("confirmar")[0];  
+            const formElement = event.target;
+            console.log(`El action del "${formElement.className}" se ha llevado a cabo?: ${checkboxInputElement.checked}`)            
+            /* En lugar de retornar si se debe realizar el action o no:
+                evaluar la condición, y si se cumple lanzar el mètodo sumbit() 
+                Obs: este mètodo NO dispara el trigger del evento
+            */
+            if (checkboxInputElement.checked) {
+                formElement.submit();
+            } else {
+                // dinamicamente informar al usuario 
+            }
+        }
+    </script>
+</body>
+</html>

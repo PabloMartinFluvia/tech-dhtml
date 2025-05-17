@@ -1,0 +1,7 @@
+@startuml htmlinputelement
+class HTMLInputElement {
+    + value
+    + checked: boolean
+}
+HTMLElement <|--- HTMLInputElement
+@enduml

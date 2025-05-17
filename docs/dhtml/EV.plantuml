@@ -27,7 +27,7 @@ REGISTRA EL CALLBACK como SUBSCRIPTOR,
 en el manejador del evento
 end note
 
-abstract EventNameHandler {
+abstract EventNameHandler <observable>{
     - callbackSubscribers: Function[]
 }
 

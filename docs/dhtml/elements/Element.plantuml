@@ -12,10 +12,11 @@ class HTMLElement
 Element <|-- HTMLElement
 Element --> CSSStyleDeclaration: + style
 
-class HTMLInputElement {
-    + value
-}
+class HTMLInputElement 
 HTMLElement <|-- HTMLInputElement
+
+class HTMLFormElement
+HTMLElement <|-- HTMLFormElement
 
 class CSSStyleDeclaration
 @enduml
