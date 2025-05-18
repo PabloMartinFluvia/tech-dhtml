@@ -1,4 +1,4 @@
-@startuml events
+@startuml event
 
 abstract Event {
     + type: String del NOM del event
@@ -11,7 +11,9 @@ Event <|-- UIEvent
 class MouseEvent
 UIEvent <|-- MouseEvent
 
-class KeyboardEvend
+class KeyboardEvend {
+    + key : String
+}
 UIEvent <|-- KeyboardEvend
 
 class ProgressEvent

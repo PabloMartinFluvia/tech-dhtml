@@ -1,6 +1,8 @@
 @startuml DOM
 
-class Window #LightBlue
+class Window #LightBlue {
+    + alert(msg: String)
+}
 note top 
 representa cada pestaña
 <BOM>
@@ -45,7 +47,7 @@ Element <|-- HTMLElement
 HTMLElement --> CSSDeclaration : style
 note on link
 si prioritat no cal indicar-la:
-element.style.propiedadCSS = "xxxYYY";
+element.style.propiedadCSSCamelCase = "xxxYYY";
 end note
 
 class CSSDeclaration

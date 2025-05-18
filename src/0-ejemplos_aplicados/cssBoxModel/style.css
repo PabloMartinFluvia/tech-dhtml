@@ -1,0 +1,72 @@
+body {
+    background-color: black;
+    color: orange;
+    width: 60%;
+    position: relative;
+    left: 20%
+}
+
+#title {
+    border-style: double;
+    border-width: 10px;
+    border-color: orange;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+#frame {
+    border: 1px orange solid;
+    min-width: 250px;
+    width: 75%;
+    height: 430px;
+    float: left;
+}
+
+#box {
+    margin: 100px;
+    outline: 20px red solid;
+    border: 20px green solid;
+    background-color: blue;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    float: left;
+    color: white;
+}
+
+form {
+    border: 1px orange solid;
+    min-width: 200px;
+    padding: 10px;
+    width: 15%;
+    float: right;
+}
+
+.field {
+    height: 35px;
+}
+
+label {
+    float: right;
+    margin-right: 2px;
+}
+
+div input {
+    width: 40px;
+    float: right;
+}
+
+div input[type="color"] {
+    width: 55px;
+    float: right;
+}
+
+div select {
+    width: 62px;
+    float: right;
+}
+
+input[type="button"] {
+    margin-top: 3px;
+    float: right;
+}

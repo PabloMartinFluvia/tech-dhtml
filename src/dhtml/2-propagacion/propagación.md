@@ -10,6 +10,6 @@
         
         ↔ configurar el [usecapture](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#usecapture)
         
-
+    - cal fer-ho en regisre dinàmic
 
 - Per a aturar la propagació (en qualsevol dels 2 casos) : event.stopPropagation()

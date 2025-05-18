@@ -18,7 +18,7 @@
     * [EventTarget](#event-target)
     * [Event](#event)
 * [Gestió d'estils](#gestió-destils)
-    * [CSSStyleDeclaration](#cssdeclaration)
+    * [CSSStyleDeclaration](#cssstyledeclaration)
 
 ## Jerarquia
 
@@ -32,7 +32,7 @@
 ![Nodos d'un document](../../out/docs/dhtml/nodos.png)
 
 ## Events
-![Estructura dels events](../../out/docs/dhtml/EV/events.svg)
+![Estructura dels events](../../out/docs/dhtml/event%20estructura/event.svg)
 
 ## Gestió de nodes
 
@@ -71,4 +71,6 @@
 ## Gestió d'Estils
 
 ### CSSStyleDeclaration
-[!CSSStyleDeclaration](../../out/docs/dhtml/estil/CSSStyleDeclaration/declarationcss.svg)
+[CSSStyleDeclaration readme](../../docs/dhtml/estil/CSSStyleDeclaration.md)
+
+![CSSStyleDeclaration](../../out/docs/dhtml/estil/CSSStyleDeclaration/cssstyle.svg)

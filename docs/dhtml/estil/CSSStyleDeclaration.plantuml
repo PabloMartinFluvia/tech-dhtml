@@ -1,7 +1,9 @@
-@startuml declarationcss
+@startuml cssstyle
 
 class CSSStyleDeclaration {
-    + setProperty(propertyName, value)
+    + cssText: String ex: "color: red; with: 2px;"
+
+    + setProperty(cssProperty: String, value: String)
 }
 
 @enduml

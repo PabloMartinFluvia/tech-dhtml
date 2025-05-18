@@ -1,12 +1,12 @@
 # Registrar el callback estáticamente
-1. Para que el action del form se ejecute según el proceso: "submit = <b>return</b> callback(event)".
+1. Para que el action del form se ejecute según el proceso: "onsubmit = <b>return</b> callback(event)".
     - el callback debe devolver <b>true o false </b>
 2. Siguiendo esta logica se puede escribir la decisión "a fuego":
-    - "submit = <b>return true o false</b>"
+    - "onsubmit = <b>return true o false</b>"
     - e incluso "submit = <b>true o false</b>"
-3. El action del form se ejecuta <b>siempre</b> si "submit = callback(event)"
+3. El action del form se ejecuta <b>siempre</b> si "onsubmit = callback(event)"
     - independientemente de si el callback devuelve algo o no
-    - viene a ser como un submit = true, ejecutando el callback
+    - viene a ser como un onsubmit = true, ejecutando el callback
 
 # Registrar el callback dinámicamente
 1. hacer formElement.addEventListener("submit", callback)
