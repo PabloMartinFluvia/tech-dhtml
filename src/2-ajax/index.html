@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AJAX</title>
+    <script>
+        const url = 
+            "https://restcountries.com/v3.1/all";
+            //"https://raw.githubusercontent.com/mdn/content/main/files/en-us/_wikihistory.json";
+        let httpRequest = new XMLHttpRequest(); // ready state = 0
+
+        function request() {
+            // inicialitzar
+            httpRequest.open("GET",    // ready state = 1
+                            encodeURI(url), 
+                            true); // per a indicar petició asíncrona. True per defecte
+            httpRequest.responseType = "json"; // response será un objecte: automáticament fa JSON.parse(response body)
+            
+            // indicar com gestionar el event de que la transacció s'ha completat
+            // httpRequest.addEventListener('load', onLoadHandler) // ídem
+            httpRequest.onload = () => { // event es dispara quan ready state === 4 (DONE)
+                if (httpRequest.status === 200) {
+                    document.getElementById("data").innerHTML
+                        = JSON.stringify(httpRequest.response);
+                } else {
+                    alert("No hay conexión"); // funció global -> penja de this -> penja de window
+                }
+            };
+            httpRequest.send(); // ready state = 2
+        }
+
+    </script>
+</head>
+
+<body onload="request();">
+    <p id="data"></p>
+</body>
+
+</html>

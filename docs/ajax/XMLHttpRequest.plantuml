@@ -1,0 +1,24 @@
+@startuml request 
+
+class XMLHttpRequest {
+    + readyState: int [0-4]
+    + responseType: String
+    + status: int httpCode
+    + response: ? contingut del body, adaptat segons responseType
+
+    + constructor()
+    + open(métodoHttp: String, URL[, asíncrono = true: boolean [, usuario [, clave]]])
+    + send()
+}
+note right
+request.addEventListener('load', handler);
+o
+request.onload = handler;
+end note
+XMLHttpRequest ..> OnLoad
+XMLHttpRequest ..> OnLoadEventHandler
+
+class OnLoad
+Event <|-- OnLoad
+
+@enduml
