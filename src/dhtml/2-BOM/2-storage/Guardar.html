@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guardar</title>
+</head>
+
+<body>
+    <form>
+        <label for="data">Dada a guardar:</label>
+        <input type="text" name="data"/>
+        <input type="button" value="Guardar" onclick="save()"/>
+    </form>
+
+    <a href="./Llegir.html">Llegir dades</a>
+    <br>
+    <a href="./Borrar.html">Borrar dada</a>
+
+    <script>
+        function save(event) {            
+            const test = {
+                propietat_definida_estaticament: "predefinit",
+                text: document.getElementsByName("data")[0].value
+            }
+            const KEY = "KEY";
+            window.localStorage.setItem(KEY, JSON.stringify(test));
+        }        
+    </script>
+    
+</body>
+
+</html>

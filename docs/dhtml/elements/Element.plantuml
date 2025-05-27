@@ -2,6 +2,7 @@
 
 class Element {
     + innerHTML: html de los nodos descendientes serialized as string
+    + classList: DOMTokenList
 
     + setAttribute(attribute: String, value: String);
     + setAttributeNode(Attr)
@@ -10,10 +11,10 @@ Node <|-- Element
 
 class HTMLElement 
 Element <|-- HTMLElement
-Element --> CSSStyleDeclaration: + style
 
 class HTMLInputElement 
 HTMLElement <|-- HTMLInputElement
+HTMLElement *--> CSSStyleDeclaration: + style
 
 class HTMLFormElement
 HTMLElement <|-- HTMLFormElement

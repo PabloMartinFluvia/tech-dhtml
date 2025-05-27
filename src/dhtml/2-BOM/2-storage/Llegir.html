@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Llegir</title>
+</head>
+
+<body onload="show()">
+    <p>Dato guardado manualmente:</p>
+    <ul id="session">Todos los datos guardados en el session storage:
+    </ul>
+    <ul id="local">Todos los datos guardados en el local storage:
+    </ul>
+    <a href="./Guardar.html">Guardar dades</a>
+    <br>
+    <a href="./Borrar.html">Borrar dada</a>
+
+    <script>
+        function show() {            
+            const lastDataInfo = document.getElementsByTagName('p')[0];
+            const KEY = "KEY";
+            lastDataInfo.innerHTML += ` ${window.localStorage.getItem(KEY)}`;
+
+            const sessionInfo = document.getElementById('session');
+            for (let i=0; i < window.sessionStorage.length; i++) {
+                const item = document.createElement('li');
+                item.innerHTML = window.sessionStorage.getItem(window.sessionStorage.key(i));
+                sessionInfo.appendChild(item);
+            }
+
+            const localInfo = document.getElementById('local');
+            for (let i=0; i < window.localStorage.length; i++) {
+                const item = document.createElement('li');
+                item.innerHTML = window.localStorage.getItem(window.localStorage.key(i));
+                sessionInfo.appendChild(item);
+            }
+
+        }
+        
+    </script>
+    
+</body>
+
+</html>

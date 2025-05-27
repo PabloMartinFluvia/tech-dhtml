@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Borrar</title>
+    <script>
+        function remove() {
+            const KEY = "KEY";
+            window.localStorage.removeItem(KEY);
+        }
+    </script>
+</head>
+
+<body onload="remove()">
+    <p>Dato borrado</p>
+
+    <a href="./Llegir.html">Llegir dades</a>
+    <br>
+    <a href="./Guardar.html">Guardar dada</a>
+    
+</body>
+
+</html>

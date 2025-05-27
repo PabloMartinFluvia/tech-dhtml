@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registro estático</title>
+    <script>
+        function onMouseEnter(event) {
+            console.log(`que ha pasado?: ${event.type}`)
+        }
+
+        class Clazz {
+            onLoad(event) {
+                console.log(`se ha producido evento ${event.type} des del ${event.target} `)
+            }
+        }
+
+        const object = new Clazz();        
+    </script>
+</head>
+
+<!-- <body onload="object.onLoad.bind(object)(event)">    Funcionen els 2 casos-->
+<body onload="object.onLoad(event)"></body>
+    <h1 onmouseenter="onMouseEnter(event)" 
+        onmouseleave="javascript: console.log(`que ha pasado?: ${event.type}`);">
+        Passa el ratón por encima y mira la consola</h1>
+</body>
+
+</html>

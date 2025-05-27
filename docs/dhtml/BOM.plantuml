@@ -18,15 +18,16 @@ note top
 el que gestiona la pantalla
 ¿Renderització i gestió CSS?
 end note
-EventTarget <|-- Screen
 
 class Window {
     + navigator
     + screen
 }
 note top 
+ÉS EL THIS GLOBAL DE LA APP
 representa cada pestaña
 end note
+EventTarget <|-- Window
 Window *--> Location
 Window *--> History
 Window *--> Document
